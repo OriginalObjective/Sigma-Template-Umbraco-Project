@@ -1,0 +1,16 @@
+src/LUU.Web.UI/obj/
+src/LUU.Web.UI/bin/x86/
+*.user
+*.suo
+src/LUU.Web.UI/App_Data/Logs/
+src/LUU.Web.UI/App_Data/TEMP/ExamineIndexes/
+src/LUU.Web.UI/App_Data/TEMP/PluginCache/umbraco-plugins.UKL025.hash
+src/LUU.Web.UI/App_Data/TEMP/PluginCache/
+src/LUU.Web.UI/App_Data/TEMP/uSync/
+src/LUU.Web.UI/App_Data/umbraco.config
+src/LUU.Web.UI/bin/LUU.Web.UI.dll
+src/LUU.Web.UI/bin/LUU.Web.UI.pdb
+src/LUU.Web.UI/bin/Config/
+src/LUU.Web.UI/App_Data/TEMP/
+src/LUU.Web.UI/bin/*.pdb
+src/LUU.Web.UI/bin/*.config

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>LUU</id>
+    <title>LUU</title>
+	  <version>$version$</version>
+    <authors>Sigma</authors>
+    <owners>Sigma</owners>
+    <licenseUrl>http://www.wearesigma.com/</licenseUrl>
+    <projectUrl>http://www.acpa.org.uk/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Leeds University Union</description>
+  </metadata>
+  <files>
+	    <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\uSync\**\" target="uSync"/>
+      <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\App_Browsers\**\" target="App_Browsers"/>
+      <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\umbraco\**\" target="umbraco"/>
+      <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\umbraco_client\**\" target="umbraco_client"/>
+      <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\static\**\" target="static"/>
+      <file src="C:\BuildAgent01\work\d422fad1c913b39\src\LUU.Web.UI\bin\*.lic" target="bin"/>
+  </files>
+</package>

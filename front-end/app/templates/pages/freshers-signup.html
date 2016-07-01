@@ -1,0 +1,108 @@
+{% extends '../base.html' %}
+{% block title %}Freshers Signup{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Sign up for groups header</h1>
+			<form class="groups-finder-search">
+				<div class="form-single">
+					<label for="search-groups">Search for groups and societies</label>
+					<input type="text" id="serch-groups" name="search-groups"/>
+					<button type="submit" class="btn btn-default">Search</button>
+				</div>
+			</form>
+			<button class="groups-categories-toggle">Open / Close Categories</button>
+			<h2>Showing results <strong>1-10</strong> of 58 results for <strong>Balls</strong></h2>
+		</div>
+	</div>
+	<div class="row">
+		<form class="groups-finder-select">
+			<div class="col-md-3">
+				<div class="groups-categories">
+					<h3>Categories</h3>
+					<div class="radio">
+						<label>
+							<input type="checkbox" name="groups-category" value="culture" />
+							Culture
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="checkbox" name="groups-category" value="dance" />
+							Dance
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="checkbox" name="groups-category" value="martial arts" />
+							Martial Arts
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="groups-list">
+					<h3>Select groups of interest</h3>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="groups-list__item">
+								<input type="checkbox" name="groups-category" id="groups-category-1" value="culture" />
+								<label for="groups-category-1">
+									<img src="http://placehold.it/100x100" alt="Culture Thumbnail" />
+									<span>Culture</span>
+									<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="groups-list__item">
+								<input type="checkbox" name="groups-category" id="groups-category-2" value="culture" />
+								<label for="groups-category-2">
+									<img src="http://placehold.it/100x100" alt="Culture Thumbnail" />
+									<span>Dance</span>
+									<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="groups-list__item">
+								<input type="checkbox" name="groups-category" id="groups-category-3" value="culture" />
+								<label for="groups-category-3">
+									<img src="http://placehold.it/100x100" alt="Culture Thumbnail" />
+									<span>Martial Arts</span>
+									<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="row">
+		<form class="groups-finder-summary">
+			<h3>Selected Groups</h3>
+			<ul class="selections">
+				<li>
+					<span>Culture</span>
+					<button class="selection-remove">Remove</button>
+				</li>
+				<li>
+					<span>Dance</span>
+					<button class="selection-remove">Remove</button>
+				</li>
+				<li>
+					<span>Martial Arts</span>
+					<button class="selection-remove">Remove</button>
+				</li>
+			</ul>
+			<div class="form-single">
+				<label for="search-groups">Enter you email to register your interest to these groups.</label>
+				<input type="text" id="serch-groups" name="search-groups"/>
+				<button type="submit" class="btn btn-default">Register</button>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}

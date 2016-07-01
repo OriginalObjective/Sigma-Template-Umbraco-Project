@@ -1,0 +1,31 @@
+{
+  "name": "leeds-frontend",
+  "version": "0.0.0",
+  "description": "HTML for LUU site",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-jshint": "*",
+    "jshint-stylish": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-util": "*",
+    "gulp-uglify": "*",
+    "gulp-concat": "*",
+    "browser-sync": "*",
+    "jquery": "*",
+    "gulp-swig": "*",
+    "bootstrap-sass": "*"
+  },
+  "devDependencies": {
+    "del": "*",
+    "jshint": "^2.9.2"
+  },
+  "jshintConfig": {
+    "node": true
+  }
+}

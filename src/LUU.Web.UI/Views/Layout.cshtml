@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}<!DOCTYPE html>
+<html lang="en">
+<head>
+	@{ Html.RenderPartial("Head", ViewData); }
+	<link rel="stylesheet" href="/static/css/styles.css" media="screen,print" />
+	@RenderSection("headerscripts", required: false)
+</head>
+<body>
+@RenderBody()
+@{ Html.RenderPartial("Footer", ViewData); }
+@RenderSection("footerscripts", required: false)
+@{ Html.RenderPartial("Google", ViewData); }
+</body>
+</html>

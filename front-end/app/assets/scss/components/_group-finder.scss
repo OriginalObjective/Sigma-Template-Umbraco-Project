@@ -1,0 +1,12 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// *	group finder.scss                                                      	 	 *
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+.groups-list__item {
+  input {
+    display: none;
+  }
+  input:checked + label {
+    background: red;
+  }
+}

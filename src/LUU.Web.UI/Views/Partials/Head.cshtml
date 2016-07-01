@@ -1,0 +1,99 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    IPublishedContent homePage = CurrentPage.Site();
+    
+    // Calculate domain for canonical url and image
+    string domain = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
+    string seoImageURL = null;
+    
+    if (HttpContext.Current.Request.Url.Port!=80)
+    {
+        domain += ":" + HttpContext.Current.Request.Url.Port;
+    }
+	
+    if (Model.Content.HasValue("seoImage"))
+	{
+        int mediaId = Model.Content.GetPropertyValue<int>("seoImage");
+        var media = Umbraco.Media(mediaId);
+		
+        if (media.DocumentTypeAlias == "Image")
+        {
+            seoImageURL = domain + media.Url();
+        }
+	}
+	
+	// Get the content of the title for og and twitter based on the SEO title (but exclude |...)
+	string appTitle = SEOChecker.Library.MetaData.Current.Title;
+	int indexOfSplitter = appTitle.IndexOf("|");
+	
+	if (indexOfSplitter > 0)
+	{
+		appTitle = appTitle.Substring(0,indexOfSplitter).Trim();
+	}
+	
+	// Get the description for og and twitter
+	string appDescription = SEOChecker.Library.MetaData.Current.Description;
+	
+	// Get the canonical url
+    string canonicalUrl = string.Empty;
+	
+    if (Model.Content.HasValue("seoChecker"))
+    {
+       // canonicalUrl = ((SEOChecker.MVC.MetaData)Model.Content.GetProperty("seoChecker").Value).CanonicalUrl;
+    }
+}@Html.Raw(SEOChecker.Library.MetaData.Current.RenderTags())
+<meta charset="utf-8">
+<link rel="apple-touch-icon-precomposed" href="/static/img/apple-touch-icon-precomposed.png" />
+<link rel="shortcut icon" href="/static/img/favicon.ico" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+@if (homePage.HasValue("googleSiteVerification")){
+	<meta name="google-site-verification" content="@homePage.GetPropertyValue("googleSiteVerification")" />
+}
+@if (homePage.HasValue("fbAppId"))
+{
+	<meta property="fb:app_id" content="@homePage.GetPropertyValue("fbAppId")" />
+}
+@if (homePage.HasValue("ogLocale"))
+{
+	<meta property="og:locale" content="@homePage.GetPropertyValue("ogLocale")" />
+}
+@if (homePage.HasValue("ogSiteName"))
+{
+	<meta property="og:site_name" content="@homePage.GetPropertyValue("ogSiteName")" />
+}
+@if (!string.IsNullOrEmpty(seoImageURL))
+{
+	<meta name="og:image" content="@seoImageURL"/>
+}
+@if (!string.IsNullOrEmpty(appDescription))
+{
+	<meta property="og:description" content="@appDescription" />
+}
+    <meta property="og:url" content="@canonicalUrl" />
+    <meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary" />
+@if (homePage.HasValue("twitterCreator"))
+{
+	<meta property="twitter:creator" content="@homePage.GetPropertyValue("twitterCreator")" />
+}		
+@if (homePage.HasValue("twitterDomain"))
+{
+	<meta property="twitter:domain" content="@homePage.GetPropertyValue("twitterDomain")" />
+}		
+@if (homePage.HasValue("twitterSite"))
+{
+	<meta property="twitter:site" content="@homePage.GetPropertyValue("twitterSite")" />
+}
+@if (!string.IsNullOrEmpty(appTitle))
+{
+	<meta property="twitter:title" content="@appTitle" />
+}
+@if (!string.IsNullOrEmpty(seoImageURL))
+{
+	<meta name="twitter:image" content="@seoImageURL"/>
+}
+@if (!string.IsNullOrEmpty(appDescription))
+{
+	<meta property="twitter:description" content="@appDescription" />
+}
